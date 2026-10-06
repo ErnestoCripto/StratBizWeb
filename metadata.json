@@ -1,0 +1,6 @@
+{
+  "name": "StratBiz - Consultoría Estratégica & IA",
+  "description": "Estrategia que transforma, tecnología que impulsa. Consultoría en Inteligencia Artificial Generativa, automatización de procesos y crecimiento para PyMEs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
