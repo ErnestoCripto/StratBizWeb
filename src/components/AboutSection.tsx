@@ -94,12 +94,20 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
             <div className="bg-[#121214] text-white border border-[#27272A] rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
               
               <div className="flex items-center gap-4">
-                {/* Professional Avatar Badge */}
+                {/* Professional Avatar with assets/EJR.png */}
                 <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl bg-[#27272A] border-2 border-[#0066CC] flex items-center justify-center relative overflow-hidden flex-shrink-0 shadow-lg">
-                  <span className="font-bebas text-4xl sm:text-5xl text-white tracking-widest">
-                    EJ
-                  </span>
-                  <span className="absolute bottom-1 right-1 bg-[#0066CC] text-white font-bold text-[9px] px-1 rounded font-mono">
+                  <img
+                    src="assets/EJR.png"
+                    alt="Dr. Ernesto Juárez Rodríguez"
+                    className="w-full h-full object-cover object-top"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.src.endsWith('/assets/EJR.png')) {
+                        target.src = '/assets/EJR.png';
+                      }
+                    }}
+                  />
+                  <span className="absolute bottom-1 right-1 bg-[#0066CC] text-white font-bold text-[9px] px-1.5 py-0.5 rounded font-mono shadow">
                     DR
                   </span>
                 </div>

@@ -61,8 +61,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onScrollToSimulator }
                 onClick={onOpenBooking}
                 className="flex items-center justify-center gap-3 bg-[#121214] hover:bg-[#27272A] text-white px-5 py-3.5 rounded-lg border border-[#27272A] transition-all transform active:scale-95 shadow-md group"
               >
-                <div className="w-6 h-6 rounded bg-[#27272A] border border-[#3F3F46] flex items-center justify-center text-[10px] font-bold text-white">
-                  EJ
+                <div className="w-6 h-6 rounded bg-[#27272A] border border-[#3F3F46] flex items-center justify-center overflow-hidden">
+                  <img
+                    src="assets/EJR.png"
+                    alt="Dr. Ernesto Juárez"
+                    className="w-full h-full object-cover object-top"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.src.endsWith('/assets/EJR.png')) {
+                        target.src = '/assets/EJR.png';
+                      }
+                    }}
+                  />
                 </div>
                 <span className="text-xs font-bold uppercase tracking-wider">
                   Agendar Consultoría

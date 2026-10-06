@@ -26,15 +26,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
-        {/* Brand Logo with modern geometric emblem inspired by reference screenshot */}
+        {/* Brand Logo with StratBiz logo from assets/LogoSB_black2.png */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="w-8 h-8 bg-[#121214] rounded-md flex items-center justify-center p-1.5 transition-transform group-hover:scale-105 shadow-xs">
-            <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-white" stroke="currentColor" strokeWidth="2.5">
-              <path d="M4 4h7v7H4z" fill="currentColor" stroke="none" />
-              <path d="M13 4h7v7h-7z" fill="none" stroke="currentColor" />
-              <path d="M4 13h7v7H4z" fill="none" stroke="currentColor" />
-              <path d="M13 13h7v7h-7z" fill="currentColor" stroke="none" />
-            </svg>
+          <div className="w-9 h-9 bg-[#121214] rounded-lg overflow-hidden flex items-center justify-center p-1 transition-transform group-hover:scale-105 shadow-xs border border-[#27272A]">
+            <img
+              src="assets/LogoSB_black2.png"
+              alt="StratBiz Logo"
+              className="w-full h-full object-contain"
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (!target.src.endsWith('/assets/LogoSB_black2.png')) {
+                  target.src = '/assets/LogoSB_black2.png';
+                }
+              }}
+            />
           </div>
           <div className="flex flex-col">
             <span className="font-bebas text-2xl tracking-wider text-[#121214] leading-none">
@@ -142,7 +147,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           >
             {/* Miniature consultant avatar */}
             <div className="w-6 h-6 rounded-md bg-[#27272A] border border-[#3F3F46] flex items-center justify-center overflow-hidden">
-              <span className="text-[10px] font-bold text-white tracking-tighter">EJ</span>
+              <img
+                src="assets/EJR.png"
+                alt="Dr. Ernesto Juárez"
+                className="w-full h-full object-cover object-top"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (!target.src.endsWith('/assets/EJR.png')) {
+                    target.src = '/assets/EJR.png';
+                  }
+                }}
+              />
             </div>
             <span className="text-xs font-bold uppercase tracking-wider">
               Contacto

@@ -16,13 +16,18 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
           {/* Col 1: Brand & Identity */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-white text-[#121214] rounded-md flex items-center justify-center p-1.5 shadow-sm">
-                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-[#121214]" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M4 4h7v7H4z" fill="currentColor" stroke="none" />
-                  <path d="M13 4h7v7h-7z" fill="none" stroke="currentColor" />
-                  <path d="M4 13h7v7H4z" fill="none" stroke="currentColor" />
-                  <path d="M13 13h7v7h-7z" fill="currentColor" stroke="none" />
-                </svg>
+              <div className="w-9 h-9 bg-white rounded-lg overflow-hidden flex items-center justify-center p-1 shadow-sm border border-white/10">
+                <img
+                  src="assets/LogoSB_black2.png"
+                  alt="StratBiz Logo"
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.src.endsWith('/assets/LogoSB_black2.png')) {
+                      target.src = '/assets/LogoSB_black2.png';
+                    }
+                  }}
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-bebas text-2xl tracking-wider text-white leading-none">
@@ -142,7 +147,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
         <div className="pt-8 border-t border-[#27272A] flex flex-col sm:flex-row items-center justify-between text-[#71717A] gap-4">
           <p>© 2026 StratBiz Consultores. Diseñado por Dr. Ernesto Juárez Rodríguez.</p>
           <div className="flex space-x-6 text-[11px]">
-            <span className="hover:text-white cursor-pointer transition-colors">Aviso de Privacidad</span>
+            <a href="aviso-de-privacidad.html" className="hover:text-white cursor-pointer transition-colors underline-offset-4 hover:underline">
+              Aviso de Privacidad
+            </a>
             <span className="hover:text-white cursor-pointer transition-colors">Términos de Servicio</span>
             <span className="hover:text-white cursor-pointer transition-colors">Código de Ética</span>
           </div>
